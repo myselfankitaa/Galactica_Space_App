@@ -93,7 +93,6 @@ const OurCrew = () => {
 
           <strong>Crew Member</strong>
 
-          <br></br>
           <p>
             Maya brings a unique blend of technical skills and customer service
             experience to the team. She’s always ready to assist with any needs
