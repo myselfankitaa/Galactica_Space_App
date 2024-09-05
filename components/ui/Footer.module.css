@@ -20,8 +20,7 @@
 }
 
 .footer p,
-.footer a,
-.footer li {
+.footer a {
   color: #000;
   font-size: medium;
   font-weight: 200;
@@ -47,4 +46,10 @@
 
 .footerList li {
   padding-block: var(--spacing-04);
+  align-items: center;
+  margin-left: 20px;
+}
+
+.link {
+  list-style-type: none;
 }
