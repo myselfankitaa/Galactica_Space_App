@@ -32,7 +32,6 @@ const planets = [
 export const Destinations = () => {
   const [selectedPlanets, onAddPlanet] = useState([]);
 
-  let isPlanetSelected = false;
   let numberOfPlanets = selectedPlanets.length;
 
   const onAddOrRemovePlanet = (name, index) => {
@@ -43,12 +42,6 @@ export const Destinations = () => {
         return [...selectedPlanets, name];
       }
     });
-
-    console.log(
-      `You selected the following planet: ${name}, with the index of ${index}`
-    );
-    isPlanetSelected = (name) => selectedPlanets.includes(name);
-    console.log(isPlanetSelected);
   };
 
   return (
