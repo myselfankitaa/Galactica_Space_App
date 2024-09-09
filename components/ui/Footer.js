@@ -2,6 +2,31 @@
 
 import { usePathname } from "next/navigation";
 import styles from "./Footer.module.css";
+import Link from "next/link";
+import { SocialMediaItem } from "@/app/destination/components/socialmedia/page";
+
+const SocialMediaList = [
+  {
+    title: "Linkedin",
+    url: "https://www.linkedin.com",
+    icon: "/socialmedia/linkdin.png",
+  },
+  {
+    title: "Facebook",
+    url: "https://facebook.com",
+    icon: "/socialmedia/facebook.png",
+  },
+  {
+    title: "Instagram",
+    url: "https://instagram.com",
+    icon: "/socialmedia/instagram.png",
+  },
+  {
+    title: "Tiktok",
+    url: "https://tiktok.com",
+    icon: "/socialmedia/tiktok.webp",
+  },
+];
 
 export const Footer = () => {
   const path = usePathname().split("?")[0];
@@ -15,42 +40,47 @@ export const Footer = () => {
         </p>
         <p>&copy; 2024 Galactica. All rights reserved.</p>
       </div>
-      {/* TASK - React 1 week 2 */}
-      {/* Create a new List for the Pages */}
-      {/* We need to use the <Link /> component here */}
-      {/* <div className={styles.pages}>
+
+      <div className={styles.pages}>
         <h3>Pages</h3>
-        <ul>
-          <li> <Link/> </li>
-          ...
+        <ul className={styles.link}>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/about_us" target="_blank">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/destination" target="_blank">
+              Destination
+            </Link>
+          </li>
+          <li>
+            <Link href="/nasa_collaboration" target="_blank">
+              NASA_ Collaboration
+            </Link>
+          </li>
         </ul>
-      </div> */}
+      </div>
       {/* Docs for the Link: https://nextjs.org/docs/pages/api-reference/components/link */}
 
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
-          <li>
-            <a href="https://www.linkedin.com">Linkedin</a>
-          </li>
-          <li>
-            <a href="https://facebook.com">Facebook</a>
-          </li>
-          <li>
-            <a href="https://instagram.com">Instagram</a>
-          </li>
-          <li>
-            <a href="https://tiktok.com">Tiktok</a>
-          </li>
-          <li>
-            <a href="https://google.com">On the streets at night</a>
-          </li>
-
-          {/* TASK - React 1 week 2 */}
-          {/* Create a <SocialMediaItem /> component and replace all of the list items! */}
-          {/* it should accept the following props */}
-          {/* url, title, icon */}
-          {/* For the icons, you can download 1-2 social media icons for testing and put it in the /public/socialmedia/ folder */}
+          {SocialMediaList.map((el, index) => {
+            return (
+              <li>
+                <SocialMediaItem
+                  key={index}
+                  url={el.url}
+                  title={el.title}
+                  icon={el.icon}
+                />
+              </li>
+            );
+          })}
         </ul>
       </div>
     </footer>
