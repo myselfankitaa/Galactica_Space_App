@@ -19,7 +19,6 @@ export const PlanetCard = ({
           <p>{description}</p>
         </div>
         <button
-          key={`button-${index}`}
           className="roundButton"
           onClick={() => onAddOrRemovePlanet(name, index)}
         >
