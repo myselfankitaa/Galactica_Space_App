@@ -44,20 +44,20 @@ export const Footer = () => {
       <div className={styles.pages}>
         <h3>Pages</h3>
         <ul className={styles.link}>
-          <li>
+          <li key="home">
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li key="about_us">
             <Link href="/about_us" target="_blank">
               About Us
             </Link>
           </li>
-          <li>
+          <li key="destination">
             <Link href="/destination" target="_blank">
               Destination
             </Link>
           </li>
-          <li>
+          <li key="nasa_collaboration">
             <Link href="/nasa_collaboration" target="_blank">
               NASA_ Collaboration
             </Link>
@@ -71,13 +71,8 @@ export const Footer = () => {
         <ul className={styles.footerList}>
           {SocialMediaList.map((el, index) => {
             return (
-              <li>
-                <SocialMediaItem
-                  key={index}
-                  url={el.url}
-                  title={el.title}
-                  icon={el.icon}
-                />
+              <li key={index}>
+                <SocialMediaItem url={el.url} title={el.title} icon={el.icon} />
               </li>
             );
           })}
